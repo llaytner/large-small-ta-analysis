@@ -22,9 +22,8 @@ get_size_class <- function(weight) {
 main_data <- read.csv("houseelf-earlength-dna-data.csv")
 
 #4 -- 
-write.csv(main_data, "houseelf_earlength_dna_data_1.csv")
-
-
+write.csv(main_data, "houseelf_earlength_dna_data_1.csv", row.names = FALSE)
+main_data1 <- read.csv("houseelf_earlength_dna_data_1.csv")
 
 
 
