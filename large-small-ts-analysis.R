@@ -19,16 +19,16 @@ get_size_class <- function(weight) {
 }
 
 #3--import data--
-read.csv("houseelf-earlength-dna-data.csv")
+main_data <- read.csv("houseelf-earlength-dna-data.csv")
 
 #4 -- 
-write.table(houseelf_earlength_dna_data_1.csv, 
-            file = "houseelf-earlength-dna-data.csv", 
-            append = FALSE, quote = TRUE, sep = " ",
-            eol = "\n", na = "NA", dec = ".", row.names = TRUE,
-            col.names = TRUE, qmethod = c("escape", "double"),
-            fileEncoding = "")
+write.csv(main_data, "houseelf_earlength_dna_data_1.csv")
 
-write.csv(...)
-write.csv2(...)
-write.csv("houseelf-earlength-dna-data.csv")
+
+
+
+
+
+
+
+
