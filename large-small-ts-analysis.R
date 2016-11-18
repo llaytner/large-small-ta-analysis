@@ -1,6 +1,7 @@
 # GIT #
 #steps to set up: 1) tell GIT who you are--> go to GIT tab in environ and click shell "git config -- global user.name "YOUR NAME""
 
+#2--First Commit--
 get_data <- function(){
   read.csv("surveys.csv")
 }
@@ -16,5 +17,18 @@ get_size_class <- function(weight) {
   }
     return(size_class)
 }
-#3
+
+#3--import data--
 read.csv("houseelf-earlength-dna-data.csv")
+
+#4 -- 
+write.table(houseelf_earlength_dna_data_1.csv, 
+            file = "houseelf-earlength-dna-data.csv", 
+            append = FALSE, quote = TRUE, sep = " ",
+            eol = "\n", na = "NA", dec = ".", row.names = TRUE,
+            col.names = TRUE, qmethod = c("escape", "double"),
+            fileEncoding = "")
+
+write.csv(...)
+write.csv2(...)
+write.csv("houseelf-earlength-dna-data.csv")
