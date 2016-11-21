@@ -21,12 +21,12 @@ get_size_class <- function(weight) {
 #3--import data--
 main_data <- read.csv("houseelf-earlength-dna-data.csv")
 
-#4 -- 
+#4 -- commit multiple files--
 write.csv(main_data, "houseelf_earlength_dna_data_1.csv", row.names = FALSE)
 main_data1 <- read.csv("houseelf_earlength_dna_data_1.csv")
+#file.rename(main_data, houseelf_earlength_dna_data_1.csv)
 
-
-
+#5--adding a remote--
 
 
 
