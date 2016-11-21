@@ -44,6 +44,12 @@ get_gc_content <- function(dnaseq){
   return(gc_content)
 }
 
+#function that determines the earth length category
+get_ear_length <- function(seq){
+    ear_lengths <- ifelse(seq > 10, "large", "small")
+    return(ear_lengths)
+}
+
 #Read ID column from csv file
 ID <- data.frame(houseelf$id, stringsAsFactors = FALSE)
 dnaseq <- data.frame(houseelf$dnaseq, stringsAsFactors = FALSE)
