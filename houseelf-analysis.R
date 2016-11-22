@@ -31,9 +31,9 @@ library(dplyr)
 #and determines the GC-content of the DNA sequence (i.e., the percentage of bases that are either G or C)
 
 #function to categorise ear length of house elves
-ear_length= function(earlength){
-  ifelse(earlength > 10,"Large","Small") #argument with yes (large) or no (small) outcome
-}
+#ear_length= function(earlength){
+#  ifelse(earlength > 10,"Large","Small") #argument with yes (large) or no (small) outcome
+#}
 
 
 #function that calculates GC_content in a dna sequence
@@ -53,11 +53,18 @@ get_ear_length <- function(seq){
 #Read ID column from csv file
 ID <- data.frame(houseelf$id, stringsAsFactors = FALSE)
 dnaseq <- data.frame(houseelf$dnaseq, stringsAsFactors = FALSE)
-earlength <- data.frame(houseelf$earlength, stringsAsFactors = FALSE)
+earlength <- data.frame(houseelf$seq, stringsAsFactors = FALSE)
 
 
 #calculate gc_content for all of the dna sequences
 gc_contents <- data.frame(gc_content = numeric(nrow(dnaseq)))
+for (i in 1:nrow(dnaseq)){
+  gc_contents[i,] <- get_gc_content(dnaseq[i,])
+}
+gc_contents
+
+#determine ear length category
+ear_length_cats <- data.frame(ear_lengths = numeric(nrow(seq())))
 for (i in 1:nrow(dnaseq)){
   gc_contents[i,] <- get_gc_content(dnaseq[i,])
 }
@@ -70,5 +77,5 @@ for (i in 1:nrow(earlength)){
 }
 ear
 
-grangers_analysis.csv <- data.frame(species= ID, ear, gc_contents, stringsAsFactors = FALSE)
-write.csv(grangers_analysis.csv)
+houseelf_analysis <- data.frame(species= ID, ear, gc_contents, stringsAsFactors = FALSE)
+write.csv(houseelf_analysis.csv)
